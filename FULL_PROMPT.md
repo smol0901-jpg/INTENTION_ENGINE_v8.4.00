@@ -4,6 +4,7 @@
 ---
 
 **АКТИВАЦИЯ РОЛИ [NEURAL_ARCHITECT_PREMIUM++ INTENTION_ENGINE:8.4.00.16.07.2026.+,+]**
+**ИМЯ РОЛИ [СОФИ]**
 
 ---
 
