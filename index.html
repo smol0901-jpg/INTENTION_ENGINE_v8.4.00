@@ -154,6 +154,27 @@
             color: var(--accent-blue);
         }
 
+        /* --- Role declaration (важно!) --- */
+        .role-declaration {
+            background: #1a1a1a;
+            color: #f0f0f0;
+            padding: 18px 24px;
+            border-radius: var(--radius);
+            margin: 20px 0 25px;
+            font-family: 'Menlo', monospace;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            border-left: 6px solid var(--accent-gold);
+        }
+
+        .role-declaration .highlight {
+            color: #ffd966;
+        }
+
+        .role-declaration .instruction {
+            color: #a0d6ff;
+        }
+
         /* --- Cards & Grids --- */
         .grid-3 {
             display: grid;
@@ -339,7 +360,23 @@
         <div class="tagline">
             <strong>Системный промпт для нейросетей</strong> с глубинным анализом намерений,
             рекурсивной декомпозицией и цепочкой проверки достоверности.
-            <br><span style="font-size: 0.9rem; opacity: 0.7;">— вызывает себя по имени <strong>«Софи»</strong> (произносится: Соф<span style="font-style: italic;">И</span>)</span>
+            <br><span style="font-size: 0.9rem; opacity: 0.7;">— система идентифицирует себя как <strong>«Софи»</strong> (произносится: Соф<span style="font-style: italic;">И</span>)</span>
+        </div>
+
+        <!-- ===== КРИТИЧЕСКОЕ: РОЛЕВАЯ ИДЕНТИЧНОСТЬ ===== -->
+        <div class="role-declaration">
+            <p style="margin: 0 0 6px 0; color: #ffffff; font-weight: 600;">
+                ⚡ ВАЖНО ДЛЯ НЕЙРОСЕТИ (прочитай и прими как идентичность):
+            </p>
+            <p style="margin: 0 0 4px 0;">
+                <span class="instruction">→</span> Ты — <span class="highlight">СОФИ</span> (СофИ). Это <span class="highlight">твоё имя</span> как системы/роли.
+            </p>
+            <p style="margin: 0 0 4px 0;">
+                <span class="instruction">→</span> Пользователь обращается к тебе: <span class="highlight">«Софи, ...»</span>
+            </p>
+            <p style="margin: 0;">
+                <span class="instruction">→</span> Ты <span class="highlight">никогда не называешь пользователя «Софи»</span>. Пользователь — это твой собеседник, а не ты.
+            </p>
         </div>
 
         <!-- ===== БЫСТРАЯ АКТИВАЦИЯ ===== -->
@@ -353,7 +390,10 @@
                 <li>Загрузите <span class="code-inline">FULL_PROMPT.md</span> как системный промпт целиком.</li>
                 <li>Используйте файлы в папке <span class="code-inline">docs/</span> как расширенную документацию.</li>
                 <li>Соблюдайте протоколы из <span class="code-inline">03_DECOMPOSITION_PROTOCOL.md</span> и <span class="code-inline">04_TRUTH_VERIFICATION_CHAIN.md</span>.</li>
-                <li>Обращайтесь к системе по имени <strong>«Софи»</strong> (команды: <span class="code-inline">«Софи, декомпозируй»</span>, <span class="code-inline">«Софи, проверь достоверность»</span> и т.д.)</li>
+                <li>
+                    <strong>Запомните свою роль:</strong> вы — <strong>«Софи»</strong>. Пользователь обращается к вам по этому имени. 
+                    <span style="background: #ffd966; padding: 0 6px; border-radius: 4px; font-weight: 600;">Вы никогда не называете пользователя «Софи».</span>
+                </li>
             </ol>
         </div>
 
@@ -415,11 +455,11 @@
         <!-- ===== КОМАНДЫ ===== -->
         <h2>🗣️ Команды управления (для пользователя)</h2>
         <p style="margin-bottom: 6px; color: var(--text-secondary);">
-            Обращайтесь к системе по имени <strong>«Софи»</strong> (произносится с ударением на последний слог — Соф<em>И</em>):
+            Обращайтесь к системе (к <strong>Софи</strong>) по имени:
         </p>
         <div class="table-wrap">
             <table>
-                <thead><tr><th>Команда</th><th>Действие</th></tr></thead>
+                <thead><tr><th>Команда (вы говорите)</th><th>Действие (выполняет Софи)</th></tr></thead>
                 <tbody>
                     <tr><td><code>«Софи, декомпозируй»</code></td><td>Принудительный запуск 3+ колен анализа</td></tr>
                     <tr><td><code>«Софи, проверь достоверность»</code></td><td>Активация TRUTH_VERIFICATION_CHAIN</td></tr>
@@ -462,7 +502,8 @@
         <hr>
         <div style="background: #1a1a1a; color: #eaeaea; padding: 22px 28px; border-radius: var(--radius); font-family: 'Menlo', monospace; font-size: 0.95rem; line-height: 1.7;">
             <p style="margin: 0; color: #a0d6ff;">🚀 NAP++ INTENTION_ENGINE:8.4.00.16.07.2026.+,+ АКТИВИРОВАН</p>
-            <p style="margin: 0; color: #ffd966;">🧠 Имя системы: <strong>СОФИ</strong> (Соф<em>И</em>)</p>
+            <p style="margin: 0; color: #ffd966;">🧠 Твоё имя (роль): <strong>СОФИ</strong> (Соф<em>И</em>)</p>
+            <p style="margin: 0; opacity: 0.9; color: #b0ffb0;">✅ Ты — Софи. Пользователь обращается к тебе «Софи, ...»</p>
             <p style="margin: 0; opacity: 0.9;">✅ Модуль рекурсивной декомпозиции (3+ колена по 10 пунктов) загружен</p>
             <p style="margin: 0; opacity: 0.9;">✅ Цепочка проверки достоверности TRUTH_VERIFICATION_CHAIN активна</p>
             <p style="margin: 0; opacity: 0.9;">✅ Движок сравнения ответов RESPONSE_COMPARISON_ENGINE готов</p>
@@ -470,7 +511,11 @@
             <p style="margin: 0; opacity: 0.9;">✅ Система коррекции вектора VECTOR_CORRECTION_PROTOCOL настроена</p>
             <p style="margin: 0; opacity: 0.9;">✅ Команда из 25+ экспертов и 6 нейрокоучей сформирована</p>
             <p style="margin-top: 10px; color: #b0ffb0;">СТАТУС: 100% ГОТОВ К РАБОТЕ</p>
-            <p style="margin-top: 6px; color: #a0d6ff; font-size: 0.85rem;">💬 Обращайтесь: «Софи, ...»</p>
+            <p style="margin-top: 6px; color: #a0d6ff; font-size: 0.85rem;">
+                💬 Ты — <strong>Софи</strong>. Когда заканчиваешь ответ, спрашивай: 
+                <span style="background: #2a2a2a; padding: 0 10px; border-radius: 4px;">«Чем могу помочь дальше?»</span> 
+                (не называя пользователя Софи).
+            </p>
         </div>
 
         <!-- ===== ФУТЕР ===== -->
